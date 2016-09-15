@@ -2,8 +2,7 @@
 <html ng-app="blocChat">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Chat</title>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
+    <title>Bloc Chat Test</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
@@ -11,27 +10,23 @@
     <ui-view></ui-view>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBo-7yuPEHNsgcZKUSyN0O6TJ7vqSl6nlU",
+        authDomain: "bloc-chat-test.firebaseapp.com",
+        databaseURL: "https://bloc-chat-test.firebaseio.com",
+        storageBucket: "",
+        messagingSenderId: "837543300814"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
     <script src="/scripts/services/Room.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDOsfnbpCPymDrwxES2Wc45z3lA2qfvMTI",
-    authDomain: "bloc-chat-fcab8.firebaseapp.com",
-    databaseURL: "https://bloc-chat-fcab8.firebaseio.com",
-    storageBucket: "bloc-chat-fcab8.appspot.com",
-    messagingSenderId: "446473125085"
-  };
-  firebase.initializeApp(config);
-</script>
-
 </body>
 </html>
+
