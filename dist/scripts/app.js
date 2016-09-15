@@ -1,15 +1,11 @@
 (function() {
-     function config($stateProvider, $locationProvider) {
-
-      $locationProvider
-         .html5Mode({
-             enabled: true,
-             requireBase: false
-        });
-
+     function config($stateProvider, $urlRouterProvider) {
+     
+     $urlRouterProvider.otherwise('/');
+         
      $stateProvider
         .state('home', {
-            url: '/home',
+            url: '/',
             controller: 'HomeCtrl as home',
             templateUrl: '/templates/home.html'
         });
