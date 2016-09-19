@@ -1,5 +1,5 @@
 (function() {
-     function HomeCtrl(Room, $firebaseAuth) {
+     function HomeCtrl(Room) {
         this.roomData = Room;
      }
   

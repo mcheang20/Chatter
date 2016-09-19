@@ -1,0 +1,19 @@
+.title {
+    padding-left: 150px;
+}
+
+.home {
+    background-color: grey;
+    opacity: .5;
+    color: black;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.container {
+    position: relative;
+    background-color: grey;
+    display: table;
+    width: 100%;
+    
+}
