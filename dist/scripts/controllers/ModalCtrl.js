@@ -19,17 +19,18 @@
               templateUrl: 'create.html',
               controller: 'ModalCtrl',
               controllerAs: 'create',
+              close: '&',
+              dismiss: '&',
               size: size,
               resolve: {
                 items: function () {
                   return this.items;
                 }
-              }
+              }      
            });
         }
-        this.cancel = function() {
-            this.dismiss('cancel');
-        }
+        $uibModalInstance.dismiss('cancel');
+        $uibModalInstance.close();
      }
   
      angular
