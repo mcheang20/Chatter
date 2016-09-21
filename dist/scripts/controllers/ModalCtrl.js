@@ -3,11 +3,6 @@
          console.log(Room);
         this.items = Room;
         this.chatRoomName = "New Chatroom";
-        
-        this.addRoom = function( roomNameFromModal ){
-            console.log(roomNameFromModal);
-          Room.add( roomNameFromModal );
-        }
 
         this.animationsEnabled = true;
          
@@ -22,6 +17,18 @@
               close: '&',
               dismiss: '&',
               size: size,
+              controller: function($scope, $uibModalInstance){
+                this.close = function(){
+                  $uibModalInstance.dismiss('cancel');
+                  $uibModalInstance.close();
+              }
+                
+                 this.addRoom = function( roomNameFromModal ){
+                  Room.add( roomNameFromModal );
+                  this.close();
+                }
+                 
+              },
               resolve: {
                 items: function () {
                   return this.items;
@@ -29,8 +36,6 @@
               }      
            });
         }
-        $uibModalInstance.dismiss('cancel');
-        $uibModalInstance.close();
      }
   
      angular
