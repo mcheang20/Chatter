@@ -14,11 +14,10 @@
             <button class="btn btn-warning" type="button" ng-click="create.close()">Cancel</button>
         </div>
     </script>
-    <div class="container">
+<section class="sidebar">
+    <a class="content" ng-repeat="room in home.roomData.all" ng-click="create.items.currentRoom">{{ room.name }}</a>
     <button type="button" class="btn btn-default" ng-click="create.open()">Add Room</button>
-    </div>
-</div>
-<div class="container">
-    <p ng-repeat="room in home.roomData.all">{{ room.name }}</p>
+</section>
 </div>
 
+<ng-include src="'/templates/chat_room.html'"></ng-include>
