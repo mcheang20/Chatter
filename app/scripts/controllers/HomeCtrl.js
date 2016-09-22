@@ -1,7 +1,7 @@
 (function() {
      function HomeCtrl(Room) {
         this.roomData = Room;
-         this.currentRoom =  Room.list.$indexFor(num);
+        this.currentRoom =  Room.list.$indexFor(num);
         }
     
      angular
