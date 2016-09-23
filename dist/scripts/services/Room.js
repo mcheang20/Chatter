@@ -1,6 +1,6 @@
 (function() {
   function Room($firebaseArray) {
-    var ref = firebase.database().ref("rooms");
+    var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
       
     var list = $firebaseArray(ref);
@@ -8,23 +8,20 @@
     return {
       all: rooms,
       add: function(roomName){
-       list.$add({ 
-           name: roomName,
-           messages: rooms.push()
-       }).then( function(ref) {
+       list.$add({ name: roomName }).then( function(ref) {
            var num = ref.key;
            list.$indexFor(num); // returns location in the array
        })
       },
-     addMessage: function(){
-         var updates = {};
-         var newMessageKey = this.currentRoom.push().key;
-         updates['/rooms/' + newMessageKey] = { message: "Hello" };
-         
-         return firebase.database().ref().update(updates);
-     }
+        
+     getMessages: function(roomId){
+         ref.child('messages').orderByChild('roomId').equalTo('-KS3j8dHPv17zMHB9swy').on('value', function(snapshot) {
+         console.log(snapshot.val(roomId));
+         })
+     },
+        
      currentRoom: null,
-      set: function(room){
+        set: function(room){
         this.currentRoom = room;
       }
     };
