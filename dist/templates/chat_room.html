@@ -1,3 +1,4 @@
-<section class="chat-room" ng-controller="HomeCtrl as home">
-    <h1 class="room-name">{{ home.currentRoom }}</h1>
+<section class="chat-room">
+    <h1 class="room-name">Current room is: {{ home.roomData.currentRoom.name }}</h1>
+    <p>{{ home.roomData.currentRoom }}</p>
 </section>

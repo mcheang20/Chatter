@@ -8,15 +8,27 @@
     return {
       all: rooms,
       add: function(roomName){
-       console.log("Adding Room!");
-       list.$add({ name: roomName }).
-        then( function(ref) {
+       list.$add({ 
+           name: roomName,
+           messages: rooms.push()
+       }).then( function(ref) {
            var num = ref.key;
            list.$indexFor(num); // returns location in the array
-       });
+       })
+      },
+     addMessage: function(){
+         var updates = {};
+         var newMessageKey = this.currentRoom.push().key;
+         updates['/rooms/' + newMessageKey] = { message: "Hello" };
+         
+         return firebase.database().ref().update(updates);
+     }
+     currentRoom: null,
+      set: function(room){
+        this.currentRoom = room;
       }
     };
-  }
+}
 
   angular
     .module('blocChat')
