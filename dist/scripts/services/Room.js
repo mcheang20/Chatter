@@ -1,8 +1,9 @@
 (function() {
   function Room($firebaseArray) {
     var ref = firebase.database().ref().child("rooms");
+    var reference = firebase.database().ref().child("messages");
     var rooms = $firebaseArray(ref);
-      
+    var messages = $firebaseArray(reference);
     var list = $firebaseArray(ref);
       
     return {
@@ -14,12 +15,13 @@
        })
       },
         
-     getMessages: function(roomId){
-         ref.child('messages').orderByChild('roomId').equalTo('-KS3j8dHPv17zMHB9swy').on('value', function(snapshot) {
-         console.log(snapshot.val(roomId));
-         })
+     getMessages: function($id) {
+           var roomIdMessages = reference.orderByChild('roomId').equalTo($id).on("child_added", function(snapshot) {
+              console.log(snapshot.val());
+              this.currentMessage = snapshot.val();
+            });
      },
-        
+     
      currentRoom: null,
         set: function(room){
         this.currentRoom = room;
