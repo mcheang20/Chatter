@@ -1,6 +1,14 @@
 <section class="chat-room">
+  <div class="back">
     <h1 class="room-name">Current room is: {{ home.roomData.currentRoom.name }}</h1>
-    <p>{{ home.roomData.currentRoom }}</p>
-    <p>{{ home.roomData.currentMessage }}</p>
-    <p ng-click="home.roomData.getMessages(home.roomData.currentRoom.$id)">Click Here</p>
+  </div>
+    <ol class="chat">
+        <li class="messages">
+            <div class="chat-content" ng-repeat="message in home.roomData.currentMessages">
+                <p>{{ message.username }}</p>
+                <p>{{ message.content }}</p>
+                <time>{{ message.sentAt }}</time>
+            </div>
+        </li>
+    </ol>
 </section>

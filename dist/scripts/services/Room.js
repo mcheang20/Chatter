@@ -8,6 +8,7 @@
       
     return {
       all: rooms,
+      mess: messages,
       add: function(roomName){
        list.$add({ name: roomName }).then( function(ref) {
            var num = ref.key;
@@ -16,15 +17,13 @@
       },
         
      getMessages: function($id) {
-           var roomIdMessages = reference.orderByChild('roomId').equalTo($id).on("child_added", function(snapshot) {
-              console.log(snapshot.val());
-              this.currentMessage = snapshot.val();
-            });
+        return $firebaseArray(reference.orderByChild('roomId').equalTo($id));
      },
      
      currentRoom: null,
         set: function(room){
         this.currentRoom = room;
+        this.currentMessages = this.getMessages(this.currentRoom.$id);
       }
     };
 }

@@ -32,3 +32,62 @@
     position: absolute;
     left: 300px;
 }
+
+.back {
+    background: rgba(82,179,217,0.9);
+    border-bottom: 1px solid black;
+    width: 1000px;
+}
+
+
+.room-name {
+    position: relative;
+    top: 3px;
+    left: 110px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.chat {
+    list-style: none;
+    background: none;
+    margin: 0;
+    padding: 0 0 50px 0;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.chat li {
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.messages .chat-content {
+    order: 1;
+    border-top-left-radius: 0px;
+    box-shadow: -1px 2px 0px #D4D4D4;
+}
+
+.chat-content {
+    background: rgba(82,179,217,0.9);
+    min-width: 50px;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 10px;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
+}
+
+.chat-content p {
+    font-size: 1 rem;
+    margin: 0 0 0.5rem 0;
+    color: #777;
+}
+
+.chat-content time {
+    font-size: .2 rem;
+    color: #ccc;
+    margin-top: 3px;
+    float: right;
+    cursor: default;
+}
