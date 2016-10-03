@@ -8,8 +8,20 @@
 <body>
     
     <ui-view></ui-view>
+     <script type="text/ng-template" id="user.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Add a username</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <input type="text" ng-model="user.roomUserName">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="user.addUser(user.roomUserName)">OK</button>
+        </div>
+    </script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -26,6 +38,7 @@
       firebase.initializeApp(config);
     </script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/cookie.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
     <script src="/scripts/controllers/ModalCtrl.js"></script>
     <script src="/scripts/services/Room.js"></script>

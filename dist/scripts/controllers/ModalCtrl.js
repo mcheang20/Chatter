@@ -15,11 +15,8 @@
               controller: 'ModalCtrl',
               controllerAs: 'create',
               close: '&',
-              dismiss: '&',
-              size: size,
               controller: function($scope, $uibModalInstance){
                 this.close = function(){
-                  $uibModalInstance.dismiss('cancel');
                   $uibModalInstance.close();
               }
                 
