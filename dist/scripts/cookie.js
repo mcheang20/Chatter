@@ -25,9 +25,9 @@
                         $cookies.put('blocChatCurrentUser', chatUserName);
                         this.close();
                     }
-                }
-             },
-             controllerAs: 'user'
+                 }
+              },
+               controllerAs: 'user'
          })
      }
   }

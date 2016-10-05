@@ -9,6 +9,12 @@
                 <p>{{ message.content }}</p>
                 <time>{{ message.sentAt }}</time>
             </div>
+            <div>Message:
+            <form ng-submit="home.messageData">
+                <input ng-model="home.messageName">
+                <button class="btn btn-primary" type="button" ng-click="home.sendMessage(home.messageName)">Send</button>
+            </form>
+            </div>
         </li>
     </ol>
 </section>
