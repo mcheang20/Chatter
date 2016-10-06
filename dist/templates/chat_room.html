@@ -1,20 +1,30 @@
-<section class="chat-room">
-  <div class="back">
-    <h1 class="room-name">Current room is: {{ home.roomData.currentRoom.name }}</h1>
-  </div>
-    <ol class="chat">
-        <li class="messages">
-            <div class="chat-content" ng-repeat="message in home.roomData.currentMessages">
-                <p>{{ message.username }}</p>
-                <p>{{ message.content }}</p>
-                <time>{{ message.sentAt }}</time>
+<div class="col-md-9">
+    <h1>Current room is: {{ home.roomData.currentRoom.name }}</h1>
+    <hr>
+        <div ng-repeat="message in home.roomData.currentMessages">
+            <div class="row">
+                 <div class="col-xs-1" ng-class-odd="'col-xs-push-1'">
+                  {{ message.username }}:<br>
+                </div>
+                 <div class="col-xs-5" ng-class-odd="'col-xs-push-1'">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {{ message.content }}<br>
+                            <span class="label label-info"> sent at {{ message.sentAt | date: 'h:mma' }} </span>
+                        </div>
+                    </div>
+                </div><!--/col-->
+            </div><!--/row-->
+    
+  	     </div><!--/col-->
+  
+    <div class="row">
+        <h2 class="text-center">Send A Message</h2>
+         <div class="col-sm-12">
+    	   <div class="input-group">
+            <input class="form-control input-large" type="text" placeholder="New Message" id="inputText" ng-model="home.messageName">
+                <span class="input-group-addon" ng-click="home.sendMessage(home.messageName)">Send</span>
             </div>
-            <div>Message:
-            <form ng-submit="home.messageData">
-                <input ng-model="home.messageName">
-                <button class="btn btn-primary" type="button" ng-click="home.sendMessage(home.messageName)">Send</button>
-            </form>
-            </div>
-        </li>
-    </ol>
-</section>
+        </div>
+     </div>
+</div>

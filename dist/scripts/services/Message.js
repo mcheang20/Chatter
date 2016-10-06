@@ -4,13 +4,14 @@
     
     var messages = $firebaseArray(ref);
       
-    var currentUser = $cookies.get('blocChatCurrentUser');
-    var setRoom = Room;
-      
-      
+    var setRoom = Room;    
+    
+    var date = new Date();
+    var getTime = date.toLocaleTimeString();
+   
     return {
       send: function(newMessage) {
-        messages.$add({ content: newMessage,  username: currentUser, roomId: setRoom.currentRoom.$id, sentAt: '' }).then( function(ref) {
+        messages.$add({ content: newMessage,  username: $cookies.get('blocChatCurrentUser'), roomId: setRoom.currentRoom.$id, sentAt: getTime }).then( function(ref) {
           var idx = ref.key;
           messages.$indexFor(idx);
         })

@@ -1,6 +1,6 @@
 (function() {
      function ModalCtrl($uibModal, Room) {
-         console.log(Room);
+        console.log(Room);
         this.items = Room;
         this.chatRoomName = "New Chatroom";
 
@@ -18,12 +18,12 @@
               controller: function($scope, $uibModalInstance){
                 this.close = function(){
                   $uibModalInstance.close();
-              }
+                }
                 
                  this.addRoom = function( roomNameFromModal ){
                   Room.add( roomNameFromModal );
                   this.close();
-                }
+                 }
                  
               },
               resolve: {

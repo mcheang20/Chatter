@@ -10,10 +10,10 @@
       all: rooms,
       mess: messages,
       add: function(roomName){
-       list.$add({ name: roomName }).then( function(ref) {
+        list.$add({ name: roomName }).then( function(ref) {
            var num = ref.key;
            list.$indexFor(num); // returns location in the array
-       })
+         })
       },
         
      getMessages: function($id) {
@@ -26,7 +26,7 @@
         this.currentMessages = this.getMessages(this.currentRoom.$id);
       }
     };
-}
+  }
 
   angular
     .module('blocChat')

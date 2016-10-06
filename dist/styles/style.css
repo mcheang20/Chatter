@@ -1,12 +1,12 @@
 .title {
     padding-left: 150px;
+    padding-bottom: 10px;
 }
 
 .home {
     background-color: grey;
     color: black;
-    margin-bottom: 10px;
-    border-bottom: 1px solid black;
+    margin-bottom: 2px;
     z-index: 1;
 }
 
@@ -14,11 +14,10 @@
     position: absolute;
     background-color: grey;
     opacity: .5;
-    height: 700px;
-    width: 250px;
     padding: 15px;
     border: 1px solid black;
-    z-index: -1;
+/*    z-index: -1;*/
+    height: 100vh;
 }
 
 .content {
@@ -91,3 +90,5 @@
     float: right;
     cursor: default;
 }
+
+
