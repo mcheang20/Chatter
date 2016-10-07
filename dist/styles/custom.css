@@ -5,3 +5,7 @@
 .col-xs-1 {
     width: 6%;
 }
+
+.btn-default {
+    margin-left: 20px;
+}
