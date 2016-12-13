@@ -1,33 +1,31 @@
-<div class="row">
-    <div class="home col-md-12">
-        <h1 class="title">Home</h1>
-    </div>
-</div>
-
-<div class="row">
+<div>
+  <h1 class="title">Chatter</h1>
+<div>
     <div ng-controller="ModalCtrl as create">
-        <script type="text/ng-template" id="create.html">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modal-title">Create Chat Room</h3>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <input type="text" ng-model="create.chatRoomName">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" ng-click="create.addRoom(create.chatRoomName)">OK</button>
-                <button class="btn btn-warning" type="button" ng-click="create.close()">Cancel</button>
-            </div>
-        </script>
-        <div class="sidebar col-md-2">
-            <ul>
-                <li ng-repeat="room in home.roomData.all" ng-click="home.roomData.set(room)">
-                    <a class="content"> {{ room.name }}</a>
-                </li>
-            </ul>
-
-            <button type="button" class="btn btn-default" ng-click="create.open()">Add Room</button>
+      <script type="text/ng-template" id="create.html">
+          <div class="modal-header">
+              <h3 class="modal-title" id="modal-title">Create Chat Room</h3>
+          </div>
+          <div class="modal-body" id="modal-body">
+              <input type="text" ng-model="create.chatRoomName">
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-primary" type="button" ng-click="create.addRoom(create.chatRoomName)">OK</button>
+              <button class="btn btn-warning" type="button" ng-click="create.close()">Cancel</button>
+          </div>
+      </script>
+      <div class="sidebar-back">
+        <div class="sidebar">
+          <h2>Chat Rooms</h2>
+          <ul>
+            <li ng-repeat="room in home.roomData.all" ng-click="home.roomData.set(room)">
+                <a class="content"> {{ room.name }}</a>
+            </li>
+          </ul>
+            <button type="button" class="btn btn-default" ng-click="create.open()">Create Room</button>
         </div>
-    </div>
-
+      </div>
+  </div>
     <ng-include src="'/templates/chat_room.html'"></ng-include>
+</div>
 </div>

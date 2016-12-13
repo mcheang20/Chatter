@@ -1,10 +1,11 @@
-<div class="col-md-9">
-    <h1>Current room is: {{ home.roomData.currentRoom.name }}</h1>
+<div class="chat-room-info">
+    <h1 class="title-top" ng-show="home.roomData.currentRoom === null">Please Choose A Room</h1>
+    <h1 class="title-top"> {{ home.roomData.currentRoom.name }}</h1>
     <hr>
         <div ng-repeat="message in home.roomData.currentMessages">
-            <div class="row">
-                 <div class="col-xs-1" ng-class-odd="'col-xs-push-1'">
-                  {{ message.username }}:<br>
+            <div class="msg-each row">
+                 <div class="col-md-1" ng-class-odd="'col-xs-push-1'">
+                  <p class="username">{{ message.username }}</p>
                 </div>
                  <div class="col-xs-5" ng-class-odd="'col-xs-push-1'">
                     <div class="panel panel-default">
@@ -15,10 +16,10 @@
                     </div>
                 </div><!--/col-->
             </div><!--/row-->
-    
+
   	     </div><!--/col-->
-  
-    <div class="row">
+
+    <div>
         <h2 class="text-center">Send A Message</h2>
          <div class="col-sm-12">
     	   <div class="input-group">
