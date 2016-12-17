@@ -1,6 +1,6 @@
 <div class="chat-room-info">
     <h1 class="title-top" ng-show="home.roomData.currentRoom === null">Please Choose A Room</h1>
-    <h1 class="title-top"> {{ home.roomData.currentRoom.name }}</h1>
+     <span class="icon-title glyphicon glyphicon-comment"></span><h1 class="title-top"> {{ home.roomData.currentRoom.name }}</h1>
     <hr>
         <div ng-repeat="message in home.roomData.currentMessages">
             <div class="msg-each row">

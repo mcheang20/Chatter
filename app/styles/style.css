@@ -4,11 +4,13 @@ html {
 
 .title {
   margin-left: 200px;
+  padding-left: 85px;
   background-color: rgb(0, 83, 216);
-  padding: 10px;
   margin-top: -1px;
   font-weight: 300;
   color: white;
+  font-size: 60px;
+  letter-spacing: 1px;
 }
 
 .sidebar-back {
@@ -38,11 +40,19 @@ html {
   list-style-type: none;
 }
 
+.sidebar p {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  margin-left: -16px;
+}
+
 .content {
   color: white;
   letter-spacing: 0.1rem;
   margin-left: -19px;
   font-weight: 100;
+  font-size: 18px;
 }
 
  a:hover {
@@ -122,4 +132,19 @@ html {
 .title-top {
   color: rgba(1,1,1,.6);
   font-weight: 200;
+}
+
+.icon-top{
+  position: absolute !important;
+  color: white;
+  margin-top: 60px;
+  font-size: 20px;
+}
+
+.icon-title {
+  position: absolute !important;
+  color: white;
+  font-size: 60px;
+  margin-top: 2px;
+  margin-left: -25px;
 }
