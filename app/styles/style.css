@@ -1,3 +1,4 @@
+/* gobal styles */
 html {
   padding-bottom: 20px;
 }
@@ -7,17 +8,17 @@ body {
 }
 
 @media (min-width: 640px) {
-    body { font-size: 1.5rem; }
+  body { font-size: 1.5rem; }
 }
 
 @media (min-width: 1024px) {
-    body { font-size: 1.2rem; }
+  body { font-size: 1.2rem; }
 }
 
 *, *::before, *::after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .top-header {
@@ -25,9 +26,7 @@ body {
 }
 
 .title {
-  margin-left: 200px;
-  padding-left: 85px;
-  margin-top: -1px;
+  padding-left: 32%;
   font-weight: 300;
   color: white;
   font-size: 6rem;
@@ -45,10 +44,12 @@ body {
 }
 
 .sidebar {
-  padding: 15px;
+  padding: 100px 20px 0 0;
   height: 100%;
-  width: 200px;
-  padding-top: 40px;
+}
+
+.sidebar button {
+  margin-left: 20px;
 }
 
 @keyframes slideIn {
