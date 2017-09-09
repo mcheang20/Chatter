@@ -1,12 +1,12 @@
 .panel {
   border-radius: 10px;
-  background-color: white;
-  box-shadow: 1px 1px 1px rgba(1,1,1,.5);
+  color: white;
+  background-color: coral;
   margin-left: 10px;
 }
 
 .btn-default {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .text-center {
@@ -15,20 +15,25 @@
 }
 
 .username {
-  border: 2px solid rgba(1,1,1,.3);
-  background-color: white;
-  border-radius: 100px;
   text-align: center;
-  padding: 5px;
-  min-width: 75px;
-  margin-left: 30px;
   color: rgba(1,1,1,.7);
   overflow: hidden;
+  font-size: 1.2em;
 }
 
 .msg-each {
-  background-color: rgba(1,1,1,.1);
-  padding: 10px;
-  margin: 5px;
-  margin-left: -35px;
+  clear: both;
+  display: flex;
+  padding: 0 10%;
+}
+
+.modal-content input {
+  border: 1px solid #c8c5cc;
+  width: 70%;
+}
+
+@media screen and (max-width: 550px) {
+  .msg-each {
+    padding: 0 5%;
+  }
 }

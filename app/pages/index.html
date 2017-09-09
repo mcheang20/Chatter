@@ -2,7 +2,8 @@
 <html ng-app="blocChat">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Chat</title>
+    <title>Chatter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/style.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/custom.css">
@@ -12,13 +13,13 @@
     <ui-view></ui-view>
      <script type="text/ng-template" id="user.html">
         <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">Add a username</h3>
+          <h3 class="modal-title" id="modal-title">Add a username</h3>
         </div>
         <div class="modal-body" id="modal-body">
-            <input type="text" ng-model="user.roomUserName">
+          <input type="text" ng-model="user.roomUserName">
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="user.addUser(user.roomUserName)">OK</button>
+          <button class="btn btn-primary" type="button" ng-click="user.addUser(user.roomUserName)">OK</button>
         </div>
     </script>
 
